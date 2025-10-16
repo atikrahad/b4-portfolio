@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kelly Adams | Illustrator Portfolio</title>
+    <title>Atik Rahad | Illustrator Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,12 +18,12 @@
     </style>
   </head>
   <body class="bg-slate-50 text-slate-800">
-    <header class="bg-slate-100">
+    <header class="bg-slate-100 border-b border-slate-200" data-page-header>
       <div class="mx-auto flex max-w-6xl items-center px-6 py-4 lg:py-5">
         <a
           href="index.html"
           class="text-2xl font-light tracking-[0.35em] text-slate-700"
-          >KELLY</a
+          >ATIK</a
         >
         <button
           class="ml-auto rounded-md border border-slate-300 p-2 lg:hidden"
@@ -46,7 +46,7 @@
           </svg>
         </button>
         <nav
-          class="hidden w-full flex-col gap-4 border-t border-slate-200 bg-white px-6 py-6 text-sm uppercase tracking-[0.2em] text-slate-600 lg:ml-12 lg:flex lg:w-auto lg:flex-1 lg:flex-row lg:items-center lg:justify-center lg:gap-9 lg:border-none lg:bg-transparent lg:px-0 lg:py-0 lg:text-slate-700"
+          class="hidden w-full flex-col gap-4 border-t border-slate-200 bg-slate-100 px-6 py-6 text-sm uppercase tracking-[0.2em] text-slate-600 lg:ml-12 lg:flex lg:w-auto lg:flex-1 lg:flex-row lg:items-center lg:justify-center lg:gap-9 lg:border-none lg:bg-transparent lg:px-0 lg:py-0 lg:text-slate-700"
           data-mobile-menu
         >
           <a
@@ -79,43 +79,6 @@
             data-nav-link
             >Portfolio</a
           >
-          <div class="relative lg:static">
-            <button
-              class="flex items-center gap-1 border-b-2 border-transparent pb-2 font-medium uppercase tracking-[0.2em] transition-colors hover:text-emerald-500"
-              data-dropdown-toggle
-            >
-              Dropdown
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.584l3.71-3.354a.75.75 0 111.02 1.1l-4.25 3.843a.75.75 0 01-1.02 0L5.21 8.33a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-            <div
-              class="mt-4 hidden rounded-xl border border-slate-200 bg-white py-2 text-sm shadow-lg lg:absolute lg:left-1/2 lg:top-full lg:w-48 lg:-translate-x-1/2"
-              data-dropdown-menu
-            >
-              <a
-                href="testimonials.html"
-                class="block px-4 py-2 text-slate-600 transition hover:bg-slate-100"
-                data-nav-link
-                >Testimonials</a
-              >
-              <a
-                href="blog.html"
-                class="block px-4 py-2 text-slate-600 transition hover:bg-slate-100"
-                data-nav-link
-                >Blog</a
-              >
-            </div>
-          </div>
           <a
             href="contact.html"
             class="border-b-2 border-transparent pb-2 font-medium transition-colors hover:text-emerald-500"
@@ -175,55 +138,39 @@
         </div>
       </div>
     </header>
+    <div data-header-placeholder class="hidden"></div>
 
     <main>
-      <section class="bg-white">
-        <div
-          class="mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 py-24 lg:flex-row"
-        >
-          <div class="max-w-xl text-center lg:text-left">
-            <span class="text-xs uppercase tracking-[0.4em] text-emerald-500"
-              >Welcome</span
+      <section
+        class="relative isolate min-h-[70vh] bg-slate-100"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1600&q=80');
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <div class="absolute inset-0 bg-white/75"></div>
+        <div class="relative mx-auto flex min-h-[70vh] max-w-5xl flex-col items-center justify-center px-6 text-center">
+          <span class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-500">
+            Atik Rahad
+          </span>
+          <h1 class="mt-6 text-4xl font-semibold text-slate-800 sm:text-5xl">
+            Web designer & developer crafting high-performing experiences
+          </h1>
+          <p class="mt-4 max-w-2xl text-base text-slate-600 sm:text-lg">
+            I help brands launch fast, responsive websites that look beautiful, convert visitors, and are simple for teams to maintain.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="about.html"
+              class="rounded-full bg-emerald-500 px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow transition hover:bg-emerald-600"
+              >About Me</a
             >
-            <h1 class="mt-6 text-4xl font-semibold text-slate-800 sm:text-5xl">
-              Kelly Adams
-            </h1>
-            <p class="mt-5 text-lg text-slate-600">
-              I'm a professional illustrator based in San Francisco crafting
-              expressive visuals that help brands tell their stories with
-              clarity and warmth.
-            </p>
-            <div
-              class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start"
+            <a
+              href="portfolio.html"
+              class="rounded-full border border-emerald-500 px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-500 transition hover:bg-emerald-50"
+              >View Portfolio</a
             >
-              <a
-                href="about.html"
-                class="rounded-full bg-emerald-500 px-8 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-white shadow transition hover:bg-emerald-600"
-                >About Me</a
-              >
-              <a
-                href="portfolio.html"
-                class="rounded-full border border-emerald-500 px-8 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-emerald-500 transition hover:bg-emerald-50"
-                >View Portfolio</a
-              >
-            </div>
-          </div>
-          <div class="relative w-full max-w-xl">
-            <img
-              src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80"
-              alt="Kelly working on a laptop"
-              class="w-full rounded-3xl object-cover shadow-xl"
-            />
-            <div
-              class="absolute -bottom-10 left-1/2 hidden w-64 -translate-x-1/2 rounded-2xl bg-white px-6 py-5 text-center shadow-xl md:block"
-            >
-              <p class="text-xs uppercase tracking-[0.35em] text-slate-400">
-                Currently
-              </p>
-              <p class="mt-2 text-sm font-semibold text-emerald-600">
-                Open for freelance projects
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -231,38 +178,34 @@
       <section class="bg-slate-100">
         <div class="mx-auto max-w-6xl px-6 py-16">
           <h2 class="text-2xl font-semibold text-slate-800">
-            Featured Services
+            What I do
           </h2>
           <p class="mt-2 max-w-2xl text-slate-600">
-            A curated blend of strategic thinking and creative execution to help
-            your brand narrate its story with confidence.
+            Every engagement balances thoughtful UX, clean UI, and reliable engineering so your product feels polished from the first click.
           </p>
           <div class="mt-10 grid gap-8 md:grid-cols-3">
             <article class="rounded-2xl bg-white p-6 shadow-sm">
               <h3 class="text-lg font-semibold text-slate-800">
-                Editorial Illustration
+                Website & UI Design
               </h3>
               <p class="mt-3 text-sm text-slate-600">
-                Magazine-ready illustrations that translate complex editorials
-                into vivid, relatable visuals.
+                Pixel-perfect layouts that reflect your brand, drive conversions, and adapt gracefully to any screen size.
               </p>
             </article>
             <article class="rounded-2xl bg-white p-6 shadow-sm">
               <h3 class="text-lg font-semibold text-slate-800">
-                Brand Identity
+                Frontend Development
               </h3>
               <p class="mt-3 text-sm text-slate-600">
-                Cohesive illustration systems for brands that need a signature
-                style across multiple touchpoints.
+                Modern, maintainable code using Tailwind, React, and performant tooling to keep experiences fast and accessible.
               </p>
             </article>
             <article class="rounded-2xl bg-white p-6 shadow-sm">
               <h3 class="text-lg font-semibold text-slate-800">
-                Product Visualization
+                Webflow & CMS Builds
               </h3>
               <p class="mt-3 text-sm text-slate-600">
-                High-fidelity concepts that help teams validate ideas and engage
-                stakeholders faster.
+                Custom CMS-powered sites that marketing teams can update in minutes, complete with scalable component libraries.
               </p>
             </article>
           </div>
@@ -273,7 +216,7 @@
     <footer class="bg-white">
       <div class="mx-auto max-w-6xl px-6 py-10">
         <p class="text-xs uppercase tracking-[0.4em] text-slate-400">
-          © 2024 Kelly Adams. Crafted with passion.
+          © 2024 Atik Rahad. Crafted with passion.
         </p>
       </div>
     </footer>

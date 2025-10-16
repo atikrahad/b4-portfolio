@@ -3,7 +3,22 @@ const menu = document.getElementById('menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const header = document.getElementById('site-header');
 const headerNav = header ? header.querySelector('nav') : null;
+const sections = document.querySelectorAll('section[id]');
 const year = document.getElementById('year');
+
+const setActiveLink = (targetId) => {
+  navLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+
+    if (href === targetId) {
+      link.classList.add('text-accent', 'font-semibold');
+      link.classList.remove('text-white/60');
+    } else {
+      link.classList.remove('text-accent', 'font-semibold');
+      link.classList.add('text-white/60');
+    }
+  });
+};
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -25,6 +40,7 @@ navLinks.forEach((link) => {
 
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActiveLink(targetId);
       }
     }
 
@@ -61,3 +77,21 @@ const applyHeaderStyles = () => {
 
 applyHeaderStyles();
 window.addEventListener('scroll', applyHeaderStyles);
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActiveLink(`#${entry.target.id}`);
+      }
+    });
+  },
+  {
+    root: null,
+    threshold: 0.45,
+    rootMargin: '-10% 0px -40% 0px',
+  }
+);
+
+sections.forEach((section) => observer.observe(section));
+setActiveLink('#home');

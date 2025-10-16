@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Kelly Adams</title>
+    <title>Portfolio | Atik Rahad</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,15 +19,15 @@
   </head>
   <body class="bg-slate-50 text-slate-800">
     <!-- Shared Header -->
-    <header class="bg-white shadow-sm">
-      <div
-        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5"
-      >
-        <a href="index.html" class="text-2xl font-light tracking-[0.4em]"
-          >KELLY</a
+    <header class="bg-slate-100 border-b border-slate-200" data-page-header>
+      <div class="mx-auto flex max-w-6xl items-center px-6 py-4 lg:py-5">
+        <a
+          href="index.html"
+          class="text-2xl font-light tracking-[0.35em] text-slate-700"
+          >ATIK</a
         >
         <button
-          class="rounded-md border border-slate-300 p-2 lg:hidden"
+          class="ml-auto rounded-md border border-slate-300 p-2 lg:hidden"
           aria-label="Toggle navigation"
           data-mobile-toggle
         >
@@ -47,84 +47,59 @@
           </svg>
         </button>
         <nav
-          class="hidden flex-col gap-4 text-sm uppercase tracking-wider lg:flex lg:flex-row lg:items-center lg:gap-8"
+          class="hidden w-full flex-col gap-4 border-t border-slate-200 bg-slate-100 px-6 py-6 text-sm uppercase tracking-[0.2em] text-slate-600 lg:ml-12 lg:flex lg:w-auto lg:flex-1 lg:flex-row lg:items-center lg:justify-center lg:gap-9 lg:border-none lg:bg-transparent lg:px-0 lg:py-0 lg:text-slate-700"
           data-mobile-menu
         >
           <a
             href="index.html"
-            class="border-b-2 border-transparent pb-1 font-medium transition-colors hover:text-emerald-500"
+            class="border-b-2 border-transparent pb-2 font-medium transition-colors hover:text-emerald-500"
             data-nav-link
             >Home</a
           >
           <a
             href="about.html"
-            class="border-b-2 border-transparent pb-1 font-medium transition-colors hover:text-emerald-500"
+            class="border-b-2 border-transparent pb-2 font-medium transition-colors hover:text-emerald-500"
             data-nav-link
             >About</a
           >
           <a
             href="resume.html"
-            class="border-b-2 border-transparent pb-1 font-medium transition-colors hover:text-emerald-500"
+            class="border-b-2 border-transparent pb-2 font-medium transition-colors hover:text-emerald-500"
             data-nav-link
             >Resume</a
           >
           <a
             href="services.html"
-            class="border-b-2 border-transparent pb-1 font-medium transition-colors hover:text-emerald-500"
+            class="border-b-2 border-transparent pb-2 font-medium transition-colors hover:text-emerald-500"
             data-nav-link
             >Services</a
           >
           <a
             href="portfolio.html"
-            class="border-b-2 border-transparent pb-1 font-medium transition-colors hover:text-emerald-500"
+            class="border-b-2 border-transparent pb-2 font-medium transition-colors hover:text-emerald-500"
             data-nav-link
             >Portfolio</a
           >
-          <div class="relative lg:static">
-            <button
-              class="flex items-center gap-1 border-b-2 border-transparent pb-1 font-medium uppercase tracking-wider transition-colors hover:text-emerald-500"
-              data-dropdown-toggle
-            >
-              Dropdown
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.584l3.71-3.354a.75.75 0 111.02 1.1l-4.25 3.843a.75.75 0 01-1.02 0L5.21 8.33a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-            <div
-              class="absolute left-0 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white py-2 text-sm shadow-lg lg:left-auto lg:right-0"
-              data-dropdown-menu
-            >
-              <a
-                href="testimonials.html"
-                class="block px-4 py-2 text-slate-600 transition hover:bg-slate-100"
-                data-nav-link
-                >Testimonials</a
-              >
-              <a
-                href="blog.html"
-                class="block px-4 py-2 text-slate-600 transition hover:bg-slate-100"
-                data-nav-link
-                >Blog</a
-              >
-            </div>
-          </div>
           <a
             href="contact.html"
-            class="border-b-2 border-transparent pb-1 font-medium transition-colors hover:text-emerald-500"
+            class="border-b-2 border-transparent pb-2 font-medium transition-colors hover:text-emerald-500"
             data-nav-link
             >Contact</a
           >
         </nav>
-        <div class="hidden items-center gap-3 text-slate-500 lg:flex">
+        <div class="ml-6 hidden items-center gap-3 text-slate-500 lg:flex">
+          <a href="#" aria-label="X">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18.5 3h3.1l-6.8 7.77 8 10.23H17l-4.78-6.24L6.7 21h-3.1l7.3-8.35L3.2 3h6.7l4.32 5.68L18.5 3Zm-2.36 15.93h1.72L8.94 5.05H7.09l9.05 13.88Z"
+              />
+            </svg>
+          </a>
           <a href="#" aria-label="Facebook">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -164,6 +139,7 @@
         </div>
       </div>
     </header>
+    <div data-header-placeholder class="hidden"></div>
 
     <main>
       <section class="bg-white">
@@ -176,9 +152,7 @@
               Selected Work
             </h1>
             <p class="mt-4 text-slate-600 md:mx-auto md:max-w-2xl">
-              A glimpse into recent collaborations spanning editorial, branding,
-              and product storytelling. Each project pairs research-backed
-              concepts with vibrant illustration.
+              A look at recent web products, marketing sites, and design systems I crafted for founders and growth teams. Every build blends UX strategy, intentional visuals, and well-structured code.
             </p>
           </div>
 
@@ -186,96 +160,90 @@
             <article class="rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
               <img
                 src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=720&q=80"
-                alt="Illustration 1"
+                alt="LaunchPad Analytics dashboard preview"
                 class="h-48 w-full rounded-t-3xl object-cover"
               />
               <div class="p-6">
                 <h2 class="text-lg font-semibold text-slate-800">
-                  Moments in Motion
+                  LaunchPad Analytics
                 </h2>
                 <p class="mt-2 text-sm text-slate-600">
-                  Event identity suite for Slack’s community tours featuring
-                  modular illustrations.
+                  SaaS analytics platform redesigned with a modular design system and rebuilt in React, shaving 40% off page load times.
                 </p>
               </div>
             </article>
             <article class="rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
               <img
                 src="https://images.unsplash.com/photo-1626785774625-ddcddc3445b4?auto=format&fit=crop&w=720&q=80"
-                alt="Illustration 2"
+                alt="Habitat Homes marketing site"
                 class="h-48 w-full rounded-t-3xl object-cover"
               />
               <div class="p-6">
                 <h2 class="text-lg font-semibold text-slate-800">
-                  Habitat Magazine
+                  Habitat Homes
                 </h2>
                 <p class="mt-2 text-sm text-slate-600">
-                  Editorial series exploring the intersection of architecture
-                  and wellbeing for a quarterly feature.
+                  Responsive real estate marketplace featuring guided onboarding, CMS-powered listings, and localized search.
                 </p>
               </div>
             </article>
             <article class="rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
               <img
                 src="https://images.unsplash.com/photo-1600267185393-e158a98703de?auto=format&fit=crop&w=720&q=80"
-                alt="Illustration 3"
+                alt="Atlas CRM web application"
                 class="h-48 w-full rounded-t-3xl object-cover"
               />
               <div class="p-6">
                 <h2 class="text-lg font-semibold text-slate-800">
-                  Atlas Platform
+                  Atlas CRM
                 </h2>
                 <p class="mt-2 text-sm text-slate-600">
-                  Product illustration system designed to guide users through
-                  data exploration flows.
+                  Component-driven CRM experience with dark mode, keyboard shortcuts, and role-based dashboards for sales teams.
                 </p>
               </div>
             </article>
             <article class="rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
               <img
                 src="https://images.unsplash.com/photo-1512374382149-233c42b6a83c?auto=format&fit=crop&w=720&q=80"
-                alt="Illustration 4"
+                alt="Blossom Wellness ecommerce store"
                 class="h-48 w-full rounded-t-3xl object-cover"
               />
               <div class="p-6">
                 <h2 class="text-lg font-semibold text-slate-800">
-                  Blossom
+                  Blossom Wellness
                 </h2>
                 <p class="mt-2 text-sm text-slate-600">
-                  Brand refresh for a DTC wellness company with playful visuals
-                  anchored in calm palettes.
+                  Headless Shopify build with storytelling landing pages, bundled subscriptions, and conversion-focused A/B testing.
                 </p>
               </div>
             </article>
             <article class="rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
               <img
                 src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=720&q=80"
-                alt="Illustration 5"
+                alt="Echo Impact nonprofit site"
                 class="h-48 w-full rounded-t-3xl object-cover"
               />
               <div class="p-6">
                 <h2 class="text-lg font-semibold text-slate-800">
-                  Echo Initiative
+                  Echo Impact
                 </h2>
                 <p class="mt-2 text-sm text-slate-600">
-                  Advocacy campaign illustrating community stories for an
-                  environmental non-profit.
+                  Story-rich Webflow site with donation flows, dynamic case studies, and multilingual support for a global non-profit.
                 </p>
               </div>
             </article>
             <article class="rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
               <img
                 src="https://images.unsplash.com/photo-1526481280695-3c46977c11b1?auto=format&fit=crop&w=720&q=80"
-                alt="Illustration 6"
+                alt="Voyager Docs knowledge base UI"
                 class="h-48 w-full rounded-t-3xl object-cover"
               />
               <div class="p-6">
                 <h2 class="text-lg font-semibold text-slate-800">
-                  Voyager Toolkit
+                  Voyager Docs
                 </h2>
                 <p class="mt-2 text-sm text-slate-600">
-                  Illustration pack for a SaaS team's onboarding and education
-                  materials.
+                  Knowledge base and onboarding portal integrating Markdown content, advanced search, and in-app feedback loops.
                 </p>
               </div>
             </article>
@@ -296,7 +264,7 @@
     <footer class="bg-white">
       <div class="mx-auto max-w-6xl px-6 py-10">
         <p class="text-xs uppercase tracking-[0.4em] text-slate-400">
-          © 2024 Kelly Adams. Crafted with passion.
+          © 2024 Atik Rahad. Crafted with passion.
         </p>
       </div>
     </footer>
