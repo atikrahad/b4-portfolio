@@ -54,9 +54,9 @@ window.addEventListener('scroll', () => {
     });
     
     navLinks.forEach(link => {
-        link.classList.remove('text-indigo-600');
+        link.classList.remove('text-indigo-400');
         if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('text-indigo-600');
+            link.classList.add('text-indigo-400');
         }
     });
 });
@@ -67,9 +67,9 @@ filterButtons.forEach(button => {
         // Update active button
         filterButtons.forEach(btn => {
             btn.classList.remove('bg-indigo-600', 'text-white');
-            btn.classList.add('bg-gray-200', 'text-gray-700');
+            btn.classList.add('bg-gray-600', 'text-gray-200');
         });
-        button.classList.remove('bg-gray-200', 'text-gray-700');
+        button.classList.remove('bg-gray-600', 'text-gray-200');
         button.classList.add('bg-indigo-600', 'text-white');
         
         // Filter portfolio items
@@ -105,7 +105,7 @@ contactForm.addEventListener('submit', (e) => {
     
     // Simulate form submission
     formMessage.classList.remove('hidden');
-    formMessage.classList.add('bg-green-100', 'text-green-700', 'p-4', 'rounded-lg');
+    formMessage.classList.add('bg-green-900', 'text-green-200', 'p-4', 'rounded-lg');
     formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
     
     // Reset form
@@ -230,100 +230,6 @@ window.addEventListener('load', () => {
     });
 });
 
-// Add dark mode toggle (optional feature)
-function createDarkModeToggle() {
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    darkModeToggle.classList.add('fixed', 'top-24', 'right-8', 'bg-gray-800', 'text-white', 'p-3', 'rounded-full', 'shadow-lg', 'z-40', 'hover:bg-gray-700', 'transition-colors', 'duration-300');
-    
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            localStorage.setItem('darkMode', 'enabled');
-        } else {
-            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            localStorage.setItem('darkMode', 'disabled');
-        }
-    });
-    
-    document.body.appendChild(darkModeToggle);
-    
-    // Check for saved dark mode preference
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-}
-
-// Initialize dark mode toggle
-createDarkModeToggle();
-
-// Add CSS for dark mode
-const darkModeStyles = document.createElement('style');
-darkModeStyles.textContent = `
-    .dark-mode {
-        background-color: #1a202c;
-        color: #e2e8f0;
-    }
-    
-    .dark-mode .bg-white {
-        background-color: #2d3748;
-        color: #e2e8f0;
-    }
-    
-    .dark-mode .bg-gray-50 {
-        background-color: #1a202c;
-    }
-    
-    .dark-mode .bg-gray-100 {
-        background-color: #2d3748;
-    }
-    
-    .dark-mode .text-gray-600 {
-        color: #cbd5e0;
-    }
-    
-    .dark-mode .text-gray-700 {
-        color: #e2e8f0;
-    }
-    
-    .dark-mode .text-gray-800 {
-        color: #e2e8f0;
-    }
-    
-    .dark-mode .border-gray-200 {
-        border-color: #4a5568;
-    }
-    
-    .dark-mode .border-gray-300 {
-        border-color: #4a5568;
-    }
-    
-    .dark-mode #navbar {
-        background-color: #2d3748;
-    }
-    
-    .dark-mode footer {
-        background-color: #1a202c;
-    }
-    
-    .dark-mode input, 
-    .dark-mode textarea {
-        background-color: #4a5568;
-        color: #e2e8f0;
-        border-color: #718096;
-    }
-    
-    .dark-mode .shadow-md {
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    }
-    
-    .dark-mode .shadow-lg {
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-    }
-`;
-document.head.appendChild(darkModeStyles);
 
 // Console welcome message
 console.log('%c Welcome to John Doe Portfolio!',
