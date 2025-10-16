@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brandon Johnson | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      section {
+        scroll-margin-top: 40px;
+      }
+
+      .hero-bg {
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.92),
+            rgba(255, 255, 255, 0.92)
+          ),
+          url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1600&q=80");
+        background-position: center right;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-slate-700 bg-slate-50 relative">
+    <aside class="fixed left-6 top-1/2 -translate-y-1/2">
+      <nav class="space-y-3">
+        <a
+          href="#home"
+          class="nav-link flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-500 shadow-lg transition hover:text-blue-600"
+          aria-label="Home"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              d="M11.47 3.84a.75.75 0 0 1 1.06 0l8.25 8.25a.75.75 0 0 1-1.06 1.06l-.72-.72v7.32a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-7.32l-.72.72a.75.75 0 1 1-1.06-1.06l8.25-8.25Z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#about"
+          class="nav-link flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-500 shadow-lg transition hover:text-blue-600"
+          aria-label="About"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.118a7.5 7.5 0 0 1 15 0A17.933 17.933 0 0 1 12 21.75c-2.645 0-5.167-.582-7.5-1.632Z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#resume"
+          class="nav-link flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-500 shadow-lg transition hover:text-blue-600"
+          aria-label="Resume"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959 0 .273-.027.54-.08.799M7.5 21h9M5.25 7.5h13.5m-1.5 0-1.258 12.583A1.125 1.125 0 0 1 13.875 21h-3.75c-.572 0-1.053-.417-1.117-.917L7.75 7.5m11.25 0h1.125c.621 0 1.125.504 1.125 1.125 0 .621-.504 1.125-1.125 1.125H19.5M4.5 9.75H3.375A1.125 1.125 0 0 0 2.25 10.875c0 .621.504 1.125 1.125 1.125H4.5m0 0h1.125m-1.125 0v9m0-9v-1.5"
+            />
+          </svg>
+        </a>
+        <a
+          href="#portfolio"
+          class="nav-link flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-500 shadow-lg transition hover:text-blue-600"
+          aria-label="Portfolio"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 12.75V12A6.75 6.75 0 0 1 9 5.25h6A6.75 6.75 0 0 1 21.75 12v.75m-10.5 0h-.75A2.25 2.25 0 0 0 8.25 15v0a2.25 2.25 0 0 0 2.25 2.25h3a2.25 2.25 0 0 0 2.25-2.25v0a2.25 2.25 0 0 0-2.25-2.25h-.75m-4.5 0h5.25m0 0V12a2.25 2.25 0 0 0-2.25-2.25h-.75A2.25 2.25 0 0 0 8.25 12v.75"
+            />
+          </svg>
+        </a>
+        <a
+          href="#blog"
+          class="nav-link flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-500 shadow-lg transition hover:text-blue-600"
+          aria-label="Blog"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v6h4.5m5.25 4.5A9.75 9.75 0 1 1 11.25 2.25v0A9.75 9.75 0 0 1 21 15.75Z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#contact"
+          class="nav-link flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-500 shadow-lg transition hover:text-blue-600"
+          aria-label="Contact"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.5a2.25 2.25 0 0 1-2.26 0l-7.5-4.5a2.25 2.25 0 0 1-1.07-1.916V6.75"
+            />
+          </svg>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="ml-28">
+      <section
+        id="home"
+        class="hero-bg min-h-screen flex flex-col justify-center gap-8 px-8 py-24 sm:px-24 lg:px-36 xl:px-48 2xl:px-64"
+      >
+        <div>
+          <p class="uppercase text-sm tracking-widest text-blue-600">Hello</p>
+          <h1 class="text-5xl sm:text-6xl font-bold text-slate-800">
+            Brandon Johnson
+          </h1>
+          <p class="mt-4 text-xl">
+            I'm <span class="underline decoration-2 decoration-blue-500">Photographer</span>
+          </p>
+        </div>
+        <div class="flex items-center gap-4 text-slate-500">
+          <button
+            class="rounded-full border border-slate-400 px-6 py-2 text-sm tracking-wide uppercase transition hover:border-blue-600 hover:text-blue-600"
+          >
+            Hire Me
+          </button>
+          <a
+            href="#portfolio"
+            class="rounded-full border border-transparent bg-blue-600 px-6 py-2 text-sm font-semibold uppercase text-white transition hover:bg-blue-700"
+          >
+            View Portfolio
+          </a>
+        </div>
+        <div class="flex items-center gap-5 text-slate-500">
+          <span class="text-xs uppercase tracking-widest">Follow</span>
+          <a href="https://x.com/" class="hover:text-blue-600" aria-label="X">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                d="M4.5 3.75h3.84l4.02 5.49 4.71-5.49h2.73l-5.88 6.84 6.54 9.66H16.62l-4.35-6.33-4.96 6.33H4.38l6.75-7.56L4.5 3.75Zm3.72 1.5H6.72l10.08 13.5h1.59L8.22 5.25Z"
+              />
+            </svg>
+          </a>
+          <a href="https://facebook.com/" class="hover:text-blue-600" aria-label="Facebook">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                d="M13.5 21H9a.75.75 0 0 1-.75-.75v-6h-2a.75.75 0 0 1-.75-.75v-3a.75.75 0 0 1 .75-.75h2v-2a4.25 4.25 0 0 1 4.25-4.25h2.5a.75.75 0 0 1 .75.75v2.75a.75.75 0 0 1-.75.75h-2a.75.75 0 0 0-.75.75V9h2.75a.75.75 0 0 1 .74.86l-.5 3a.75.75 0 0 1-.74.64H12v6.25a.75.75 0 0 0 .75.75h.75V21Z"
+              />
+            </svg>
+          </a>
+          <a href="https://instagram.com/" class="hover:text-blue-600" aria-label="Instagram">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                d="M7.5 3.75c-2.071 0-3.75 1.679-3.75 3.75v9c0 2.071 1.679 3.75 3.75 3.75h9c2.071 0 3.75-1.679 3.75-3.75v-9c0-2.071-1.679-3.75-3.75-3.75h-9Zm7.5 8.25a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-3-4.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm5.25-.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+              />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/" class="hover:text-blue-600" aria-label="LinkedIn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                d="M6.75 7.5a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75ZM3.75 9.75A.75.75 0 0 1 4.5 9h4.5a.75.75 0 0 1 .75.75v9.75a.75.75 0 0 1-.75.75H4.5a.75.75 0 0 1-.75-.75V9.75Zm9 0a.75.75 0 0 1 .75-.75h3.564a4.436 4.436 0 0 1 4.436 4.436V19.5a.75.75 0 0 1-.75.75h-3a.75.75 0 0 1-.75-.75v-4.687a1.313 1.313 0 0 0-2.626 0V19.5a.75.75 0 0 1-.75.75h-3a.75.75 0 0 1-.75-.75V9.75Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="bg-white min-h-screen flex items-center px-8 py-24 sm:px-24 lg:px-36 xl:px-48 2xl:px-64"
+      >
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-bold text-slate-800">About Me</h2>
+          <p class="mt-6 leading-relaxed text-slate-600">
+            I’m Brandon, a portrait and lifestyle photographer based in Portland.
+            My work pairs cinematic lighting with candid storytelling so every
+            image feels alive. Whether I’m collaborating with brands, documenting
+            weddings, or capturing personal narratives, I focus on creating photos
+            that feel honest and timeless.
+          </p>
+          <div class="mt-10 grid gap-8 sm:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-slate-800">Experience</h3>
+              <p class="mt-3 text-sm text-slate-600">
+                8+ years leading shoots for agencies and independent clients
+                across lifestyle, fashion, and editorial campaigns.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-slate-800">Location</h3>
+              <p class="mt-3 text-sm text-slate-600">
+                Based in Portland, OR. Available for travel projects worldwide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="resume"
+        class="min-h-screen bg-slate-100 flex items-center px-8 py-24 sm:px-24 lg:px-36 xl:px-48 2xl:px-64"
+      >
+        <div class="max-w-4xl">
+          <h2 class="text-3xl font-bold text-slate-800">Resume</h2>
+          <div class="mt-10 space-y-10 border-l border-slate-300 pl-10">
+            <div>
+              <span class="text-xs uppercase tracking-widest text-blue-600"
+                >2021 — Present</span
+              >
+              <h3 class="mt-2 text-xl font-semibold text-slate-800">
+                Lead Photographer · North Horizon Studio
+              </h3>
+              <p class="mt-3 text-sm text-slate-600">
+                Direct creative strategy and manage production for large-scale
+                commercial shoots spanning outdoor, travel, and hospitality brands.
+              </p>
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-widest text-blue-600"
+                >2017 — 2021</span
+              >
+              <h3 class="mt-2 text-xl font-semibold text-slate-800">
+                Freelance Photographer
+              </h3>
+              <p class="mt-3 text-sm text-slate-600">
+                Partnered with agencies to deliver editorial-style imagery and
+                built a client roster of lifestyle brands across the West Coast.
+              </p>
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-widest text-blue-600"
+                >2013 — 2017</span
+              >
+              <h3 class="mt-2 text-xl font-semibold text-slate-800">
+                Studio Assistant · City Light Collective
+              </h3>
+              <p class="mt-3 text-sm text-slate-600">
+                Assisted on set, coordinated lighting setups, and honed technical
+                proficiency with both digital and analog workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="portfolio"
+        class="min-h-screen bg-white flex items-center px-8 py-24 sm:px-24 lg:px-36 xl:px-48 2xl:px-64"
+      >
+        <div class="max-w-5xl">
+          <h2 class="text-3xl font-bold text-slate-800">Selected Work</h2>
+          <p class="mt-4 text-slate-600">
+            A glimpse into recent assignments. Each gallery opens in a new tab.
+          </p>
+          <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <a
+              href="#"
+              class="group overflow-hidden rounded-3xl shadow-lg transition hover:-translate-y-1"
+            >
+              <div
+                class="h-52 bg-cover bg-center"
+                style='background-image: url("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80");'
+              ></div>
+              <div class="bg-white p-6">
+                <h3 class="text-lg font-semibold text-slate-800 group-hover:text-blue-600">
+                  Mountain Stories
+                </h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  Editorial portraits captured at sunrise in the Cascades.
+                </p>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="group overflow-hidden rounded-3xl shadow-lg transition hover:-translate-y-1"
+            >
+              <div
+                class="h-52 bg-cover bg-center"
+                style='background-image: url("https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80");'
+              ></div>
+              <div class="bg-white p-6">
+                <h3 class="text-lg font-semibold text-slate-800 group-hover:text-blue-600">
+                  Dawn Rituals
+                </h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  Lifestyle series for a wellness brand reimagining morning moments.
+                </p>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="group overflow-hidden rounded-3xl shadow-lg transition hover:-translate-y-1"
+            >
+              <div
+                class="h-52 bg-cover bg-center"
+                style='background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80");'
+              ></div>
+              <div class="bg-white p-6">
+                <h3 class="text-lg font-semibold text-slate-800 group-hover:text-blue-600">
+                  Urban Shadows
+                </h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  Conceptual fashion lookbook exploring light and geometry.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="blog"
+        class="min-h-screen bg-slate-100 flex items-center px-8 py-24 sm:px-24 lg:px-36 xl:px-48 2xl:px-64"
+      >
+        <div class="max-w-5xl">
+          <h2 class="text-3xl font-bold text-slate-800">Journal</h2>
+          <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <article class="rounded-3xl bg-white p-6 shadow-sm">
+              <span class="text-xs uppercase tracking-widest text-blue-600"
+                >March 2024</span
+              >
+              <h3 class="mt-3 text-lg font-semibold text-slate-800">
+                Shooting in Bad Weather
+              </h3>
+              <p class="mt-3 text-sm text-slate-600">
+                How I embrace rainy forecasts and turn overcast days into moody portraits.
+              </p>
+            </article>
+            <article class="rounded-3xl bg-white p-6 shadow-sm">
+              <span class="text-xs uppercase tracking-widest text-blue-600"
+                >February 2024</span
+              >
+              <h3 class="mt-3 text-lg font-semibold text-slate-800">
+                Creative Brief Checklist
+              </h3>
+              <p class="mt-3 text-sm text-slate-600">
+                The questions I ask before every shoot to keep clients aligned and inspired.
+              </p>
+            </article>
+            <article class="rounded-3xl bg-white p-6 shadow-sm">
+              <span class="text-xs uppercase tracking-widest text-blue-600"
+                >January 2024</span
+              >
+              <h3 class="mt-3 text-lg font-semibold text-slate-800">
+                Favorite Film Presets
+              </h3>
+              <p class="mt-3 text-sm text-slate-600">
+                A glimpse into the Lightroom looks I use to keep tones cinematic yet true.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="min-h-screen bg-white flex items-center px-8 py-24 sm:px-24 lg:px-36 xl:px-48 2xl:px-64"
+      >
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-bold text-slate-800">Let’s Work Together</h2>
+          <p class="mt-4 text-slate-600">
+            Ready to collaborate on your next project? Send me a note with the
+            details and I’ll get back within 48 hours.
+          </p>
+          <form class="mt-10 grid gap-6">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="block text-sm font-medium text-slate-700">
+                Name
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
+                />
+              </label>
+              <label class="block text-sm font-medium text-slate-700">
+                Email
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
+                />
+              </label>
+            </div>
+            <label class="block text-sm font-medium text-slate-700">
+              Project Details
+              <textarea
+                rows="5"
+                placeholder="Tell me about your shoot..."
+                class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
+              ></textarea>
+            </label>
+            <button
+              type="submit"
+              class="w-fit rounded-full bg-blue-600 px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition hover:bg-blue-700"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script>
+      const sections = Array.from(document.querySelectorAll("main section"));
+      const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+
+      const setActiveLink = (id) => {
+        navLinks.forEach((link) => {
+          const targetId = link.getAttribute("href").slice(1);
+          if (targetId === id) {
+            link.classList.add("bg-blue-600", "text-white");
+            link.classList.remove("bg-white", "text-slate-500");
+          } else {
+            link.classList.remove("bg-blue-600", "text-white");
+            link.classList.add("bg-white", "text-slate-500");
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveLink(entry.target.id);
+            }
+          });
+        },
+        { threshold: 0.6 }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+      setActiveLink(sections[0]?.id || "home");
+    </script>
+  </body>
+</html>

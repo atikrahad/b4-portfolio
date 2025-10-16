@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credo Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              accent: '#f4a742',
+            },
+            fontFamily: {
+              heading: ['Poppins', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-black text-white font-body scroll-smooth">
+    <div
+      class="relative min-h-screen bg-cover bg-center"
+      style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=2100&q=80');"
+    >
+      <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/10"></div>
+
+      <header id="site-header" class="fixed top-0 left-0 right-0 z-50 border-b border-transparent transition-all duration-300">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 transition-all duration-300 lg:px-12">
+          <div class="text-2xl font-heading font-semibold tracking-wide">Credo</div>
+
+          <button
+            id="menu-toggle"
+            class="flex h-10 w-10 items-center justify-center rounded-md border border-white/20 bg-white/5 text-white transition hover:bg-white/10 lg:hidden"
+            aria-label="Toggle navigation menu"
+          >
+            <svg
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+          <div
+            id="menu"
+            class="absolute left-0 right-0 top-full hidden flex-col gap-4 bg-black/95 px-6 py-6 text-center text-sm uppercase tracking-wide shadow-lg lg:static lg:flex lg:flex-row lg:items-center lg:bg-transparent lg:p-0 lg:text-xs lg:tracking-[0.35em]"
+          >
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#work" class="nav-link">Photography</a>
+            <a href="#blog" class="nav-link">Blog</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="relative z-10">
+        <section
+          id="home"
+          class="mx-auto flex min-h-[80vh] max-w-6xl flex-col justify-center px-6 pb-20 pt-32 sm:pt-36 lg:flex-row lg:items-end lg:px-12"
+        >
+          <div class="max-w-xl space-y-6 lg:pb-16">
+            <p class="text-sm uppercase tracking-[0.35em] text-white/70">Photographer &nbsp;|&nbsp; Speaker</p>
+            <h1 class="font-heading text-4xl font-semibold sm:text-5xl lg:text-6xl">
+              I'm Craig Smith
+            </h1>
+            <p class="max-w-lg text-base text-white/70 sm:text-lg">
+              I capture authentic stories through powerful imagery. From editorial portraits to immersive travel
+              documentaries, my lens brings moments to life with nuance and emotion.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center rounded-full bg-accent px-6 py-3 font-medium text-black shadow-lg transition hover:bg-accent/90"
+            >
+              Contact Me
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <section id="about" class="bg-black py-20">
+      <div class="mx-auto grid max-w-5xl gap-10 px-6 lg:grid-cols-2 lg:px-12">
+        <div class="space-y-6">
+          <h2 class="font-heading text-3xl font-semibold">A Story in Every Frame</h2>
+          <p class="text-white/70">
+            From the first click of the shutter to the final edit, I focus on creating visuals that resonate. Over the past
+            decade, I've collaborated with brands, artists, and publications to craft campaigns and narrative-driven photo
+            essays that transport audiences.
+          </p>
+          <p class="text-white/70">
+            When I'm not behind the camera, you'll find me sharing insights on storytelling, lighting, and creative direction
+            at workshops around the world.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+            <h3 class="font-heading text-xl font-semibold text-white">Awards</h3>
+            <p class="mt-2 text-white/70">
+              Winner of the 2023 Visual Storytelling Award and featured globally by LensLight Magazine and Creative Weekly.
+            </p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+            <h3 class="font-heading text-xl font-semibold text-white">Clients</h3>
+            <p class="mt-2 text-white/70">
+              Collaborations with Vogue Italia, National Geographic, Pioneer Films, and numerous independent creators.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-[#0A0A0A] py-20">
+      <div class="mx-auto max-w-6xl px-6 lg:px-12">
+        <div class="flex flex-col items-start justify-between gap-8 pb-14 lg:flex-row lg:items-end">
+          <div>
+            <h2 class="font-heading text-3xl font-semibold">What I Do</h2>
+            <p class="mt-4 max-w-2xl text-white/70">
+              I offer bespoke photography and creative direction with a focus on human connection and cinematic storytelling.
+            </p>
+          </div>
+          <a href="#contact" class="text-sm uppercase tracking-[0.35em] text-accent hover:text-accent/80">
+            Let's Collaborate
+          </a>
+        </div>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-white/5 bg-white/5 p-8 backdrop-blur">
+            <h3 class="font-heading text-xl font-semibold text-white">Editorial Portraits</h3>
+            <p class="mt-3 text-white/60">
+              Tailored portrait sessions with advanced lighting setups and art direction that matches your story.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-white/5 bg-white/5 p-8 backdrop-blur">
+            <h3 class="font-heading text-xl font-semibold text-white">Documentary Films</h3>
+            <p class="mt-3 text-white/60">
+              From concept to delivery, I produce short-form documentaries capturing the essence of people and places.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-white/5 bg-white/5 p-8 backdrop-blur">
+            <h3 class="font-heading text-xl font-semibold text-white">Creative Workshops</h3>
+            <p class="mt-3 text-white/60">
+              Hands-on training covering storytelling, post-processing, and building a compelling visual brand.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="bg-black py-20">
+      <div class="mx-auto max-w-6xl px-6 lg:px-12">
+        <div class="flex flex-col gap-6 pb-12 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <h2 class="font-heading text-3xl font-semibold">Selected Work</h2>
+            <p class="mt-4 max-w-xl text-white/70">
+              A curated gallery of recent projects spanning editorial, commercial, and documentary photography.
+            </p>
+          </div>
+          <a href="#" class="text-sm uppercase tracking-[0.35em] text-accent hover:text-accent/80">
+            View All Projects
+          </a>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="group relative h-64 overflow-hidden rounded-2xl border border-white/10"
+            style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"
+          >
+            <div class="absolute inset-0 bg-black/40 transition group-hover:bg-black/20"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-white/70">Editorial</p>
+              <h3 class="font-heading text-lg font-semibold">City Lights</h3>
+            </div>
+          </div>
+          <div
+            class="group relative h-64 overflow-hidden rounded-2xl border border-white/10"
+            style="background-image: url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"
+          >
+            <div class="absolute inset-0 bg-black/40 transition group-hover:bg-black/20"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-white/70">Commercial</p>
+              <h3 class="font-heading text-lg font-semibold">Golden Hour</h3>
+            </div>
+          </div>
+          <div
+            class="group relative h-64 overflow-hidden rounded-2xl border border-white/10"
+            style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"
+          >
+            <div class="absolute inset-0 bg-black/40 transition group-hover:bg-black/20"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-white/70">Travel</p>
+              <h3 class="font-heading text-lg font-semibold">Tidal Echoes</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="bg-[#0A0A0A] py-20">
+      <div class="mx-auto max-w-6xl px-6 lg:px-12">
+        <h2 class="font-heading text-3xl font-semibold">Latest Articles</h2>
+        <div class="mt-12 grid gap-8 md:grid-cols-3">
+          <article class="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+            <p class="text-xs uppercase tracking-[0.35em] text-accent">Insights</p>
+            <h3 class="font-heading text-xl font-semibold">Shaping Light in Minimal Spaces</h3>
+            <p class="text-white/60">
+              How to shoot portraits in compact studios while keeping your subjects relaxed and expressive.
+            </p>
+            <a href="#" class="text-sm font-medium text-accent hover:text-accent/80">Read More →</a>
+          </article>
+          <article class="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+            <p class="text-xs uppercase tracking-[0.35em] text-accent">Behind The Lens</p>
+            <h3 class="font-heading text-xl font-semibold">Documenting Remote Communities</h3>
+            <p class="text-white/60">
+              A field guide for respectful storytelling when traveling to document cultures off the beaten path.
+            </p>
+            <a href="#" class="text-sm font-medium text-accent hover:text-accent/80">Read More →</a>
+          </article>
+          <article class="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+            <p class="text-xs uppercase tracking-[0.35em] text-accent">Process</p>
+            <h3 class="font-heading text-xl font-semibold">Building Trust With Your Subjects</h3>
+            <p class="text-white/60">
+              Techniques for cultivating genuine connections during each stage of a shoot.
+            </p>
+            <a href="#" class="text-sm font-medium text-accent hover:text-accent/80">Read More →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-black py-20">
+      <div class="mx-auto max-w-4xl px-6 lg:px-12">
+        <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-black via-black to-black/60 p-10 shadow-2xl">
+          <h2 class="font-heading text-3xl font-semibold">Let's Collaborate</h2>
+          <p class="mt-4 max-w-2xl text-white/70">
+            Share a few details about your project and we'll plan a creative direction tailored to your goals.
+          </p>
+          <form class="mt-10 grid gap-6 md:grid-cols-2">
+            <label class="flex flex-col text-sm uppercase tracking-[0.25em] text-white/50">
+              Name
+              <input
+                type="text"
+                placeholder="Craig Smith"
+                class="mt-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base text-white placeholder-white/40 focus:border-accent focus:outline-none"
+                required
+              />
+            </label>
+            <label class="flex flex-col text-sm uppercase tracking-[0.25em] text-white/50">
+              Email
+              <input
+                type="email"
+                placeholder="hello@credo.studio"
+                class="mt-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base text-white placeholder-white/40 focus:border-accent focus:outline-none"
+                required
+              />
+            </label>
+            <label class="md:col-span-2 flex flex-col text-sm uppercase tracking-[0.25em] text-white/50">
+              Project Details
+              <textarea
+                rows="4"
+                placeholder="Tell me about your vision..."
+                class="mt-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base text-white placeholder-white/40 focus:border-accent focus:outline-none"
+                required
+              ></textarea>
+            </label>
+            <button
+              type="submit"
+              class="md:col-span-2 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-medium text-black shadow-lg transition hover:bg-accent/90"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-black pb-10 pt-6 text-center text-xs uppercase tracking-[0.3em] text-white/50">
+      © <span id="year"></span> Credo Studio. All rights reserved.
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
