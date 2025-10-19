@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel Davis - Web Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Accent color */
+        .accent { color: #d4ff00; }
+        .accent-bg { background-color: #d4ff00; }
+        .accent-border { border-color: #d4ff00; }
+
+        /* Navigation active state */
+        nav a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d4ff00;
+            transition: width 0.3s ease;
+        }
+
+        nav a.active {
+            color: #d4ff00;
+        }
+
+        nav a.active::after {
+            width: 100%;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Button styles */
+        .btn-primary {
+            background-color: #d4ff00;
+            color: #0a0a0a;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #c0e600;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #d4ff00;
+            padding: 12px 32px;
+            border: 2px solid #d4ff00;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d4ff00;
+            color: #0a0a0a;
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card hover effect */
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #d4ff00;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 255, 0, 0.1);
+        }
+
+        /* Section spacing */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 255, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+        }
+
+        /* Form styles */
+        input, textarea {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            color: #e0e0e0;
+            padding: 12px 16px;
+            border-radius: 4px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #d4ff00;
+        }
+
+        /* Stats section */
+        .stat-box {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #d4ff00;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+        }
+
+        /* Portfolio grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            border-top: 1px solid #2a2a2a;
+            padding: 40px 20px;
+            text-align: center;
+            color: #a0a0a0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold accent">Minifolio</div>
+            <div class="hidden md:flex gap-8">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="md:hidden text-white" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-black border-t border-gray-800">
+            <a href="#home" class="block px-6 py-3 nav-link">Home</a>
+            <a href="#about" class="block px-6 py-3 nav-link">About</a>
+            <a href="#services" class="block px-6 py-3 nav-link">Services</a>
+            <a href="#portfolio" class="block px-6 py-3 nav-link">Portfolio</a>
+            <a href="#contact" class="block px-6 py-3 nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="text-sm tracking-widest text-gray-500 mb-4">WELCOME TO MY PORTFOLIO</p>
+            <h1>I'm Rachel <span class="accent">Davis</span><br>Web Developer</h1>
+            <p>Creating beautiful and functional web experiences</p>
+            <div class="flex gap-4 justify-center mt-8">
+                <button class="btn-primary">Get Started</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-black">
+        <div class="container">
+            <div class="text-center mb-16 reveal">
+                <p class="text-sm tracking-widest accent mb-4">ABOUT ME</p>
+                <h2 class="text-4xl font-bold mb-6">Who I Am</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="/placeholder.svg?height=400&width=400" alt="Rachel Davis" class="rounded-lg">
+                </div>
+                <div class="reveal">
+                    <p class="text-lg text-gray-300 mb-6">
+                        I'm a passionate web developer with 5+ years of experience creating stunning digital experiences. I specialize in modern web technologies and love turning ideas into reality.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        My journey in web development started with a curiosity about how things work on the internet. Today, I help businesses and startups build beautiful, performant, and user-friendly websites.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="card p-6 rounded-lg">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="card p-6 rounded-lg">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-black">
+        <div class="container">
+            <div class="text-center mb-16 reveal">
+                <p class="text-sm tracking-widest accent mb-4">WHAT I OFFER</p>
+                <h2 class="text-4xl font-bold">My Services</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card p-8 rounded-lg reveal">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h3 class="text-xl font-bold mb-4">Web Design</h3>
+                    <p class="text-gray-400">Creating beautiful and intuitive user interfaces that engage and convert.</p>
+                </div>
+                <div class="card p-8 rounded-lg reveal">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-400">Building fast, responsive, and scalable web applications with modern technologies.</p>
+                </div>
+                <div class="card p-8 rounded-lg reveal">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold mb-4">Responsive Design</h3>
+                    <p class="text-gray-400">Ensuring your website looks perfect on all devices and screen sizes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-black">
+        <div class="container">
+            <div class="text-center mb-16 reveal">
+                <p class="text-sm tracking-widest accent mb-4">MY WORK</p>
+                <h2 class="text-4xl font-bold">Featured Projects</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item card rounded-lg overflow-hidden reveal">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 1">
+                </div>
+                <div class="portfolio-item card rounded-lg overflow-hidden reveal">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 2">
+                </div>
+                <div class="portfolio-item card rounded-lg overflow-hidden reveal">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 3">
+                </div>
+                <div class="portfolio-item card rounded-lg overflow-hidden reveal">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 4">
+                </div>
+                <div class="portfolio-item card rounded-lg overflow-hidden reveal">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 5">
+                </div>
+                <div class="portfolio-item card rounded-lg overflow-hidden reveal">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-black">
+        <div class="container">
+            <div class="text-center mb-16 reveal">
+                <p class="text-sm tracking-widest accent mb-4">GET IN TOUCH</p>
+                <h2 class="text-4xl font-bold mb-6">Let's Work Together</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Have a project in mind? I'd love to hear about it. Get in touch and let's create something amazing together.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- Contact Form -->
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-8">Send me a message</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Your Name" required class="w-full">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" required class="w-full">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Subject" required class="w-full">
+                        </div>
+                        <div>
+                            <textarea placeholder="Your Message" rows="5" required class="w-full"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-lg font-semibold accent mb-2">Email</h4>
+                            <a href="mailto:rachel@example.com" class="text-gray-400 hover:accent transition">rachel@example.com</a>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold accent mb-2">Phone</h4>
+                            <a href="tel:+1234567890" class="text-gray-400 hover:accent transition">+1 (234) 567-890</a>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold accent mb-4">Social Media</h4>
+                            <div class="flex gap-4">
+                                <a href="#" class="text-gray-400 hover:accent transition text-xl">LinkedIn</a>
+                                <a href="#" class="text-gray-400 hover:accent transition text-xl">Twitter</a>
+                                <a href="#" class="text-gray-400 hover:accent transition text-xl">GitHub</a>
+                                <a href="#" class="text-gray-400 hover:accent transition text-xl">Instagram</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold accent mb-2">Location</h4>
+                            <p class="text-gray-400">San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rachel Davis. All rights reserved.</p>
+            <p class="text-sm mt-2">Designed & Built with <span class="accent">❤</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Active navigation link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+
+        function reveal() {
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scroll for navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').slice(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

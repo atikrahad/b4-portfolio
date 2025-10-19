@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safs - Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        nav {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        nav.scrolled {
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav.transparent {
+            background-color: transparent !important;
+            box-shadow: none;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link.active {
+            color: #FFC107 !important;
+            font-weight: 600;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #FFC107;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.9) 0%, rgba(255, 193, 7, 0.7) 100%);
+        }
+        
+        .yellow-accent {
+            background-color: #FFC107;
+        }
+        
+        .dark-section {
+            background-color: #1a1a1a;
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-bar {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            background-color: #FFC107;
+            height: 8px;
+            border-radius: 10px;
+        }
+        
+        .portfolio-item {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .portfolio-item img {
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-member img {
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="transparent sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold text-yellow-500">Safs</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-yellow-500">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-yellow-500">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-yellow-500">Services</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-yellow-500">Portfolio</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-yellow-500">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-overlay py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">LET'S BEGIN</h1>
+                    <p class="text-lg mb-8 opacity-90">Your journey to digital excellence starts here. We create stunning designs and powerful web solutions.</p>
+                    <button class="bg-white text-yellow-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Get Started</button>
+                </div>
+                <div>
+                    <img src="/placeholder.svg?height=400&width=400" alt="Professional" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-8 rounded-lg">
+                    <div class="text-yellow-500 text-4xl mb-4"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3 class="text-xl font-bold mb-4">GRAPHIC DESIGN</h3>
+                    <p class="text-gray-600">Creative and stunning visual designs that capture your brand's essence and engage your audience effectively.</p>
+                </div>
+                <div class="service-card bg-white p-8 rounded-lg">
+                    <div class="text-yellow-500 text-4xl mb-4"><i class="fas fa-code"></i></div>
+                    <h3 class="text-xl font-bold mb-4">WEB DESIGN</h3>
+                    <p class="text-gray-600">Modern, responsive websites that provide excellent user experience and drive conversions for your business.</p>
+                </div>
+                <div class="service-card bg-white p-8 rounded-lg">
+                    <div class="text-yellow-500 text-4xl mb-4"><i class="fas fa-search"></i></div>
+                    <h3 class="text-xl font-bold mb-4">SEO SERVICES</h3>
+                    <p class="text-gray-600">Optimize your online presence with proven SEO strategies that boost visibility and drive organic traffic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">ABOUT ME</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="yellow-accent p-8 rounded-lg">
+                    <img src="/placeholder.svg?height=400&width=400" alt="Profile" class="rounded-lg w-full">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold mb-4">Hello, I am <span class="text-yellow-500">Al Amin</span></h3>
+                    <p class="text-gray-600 mb-6">Graphic Designer and Web Developer with 5+ years of experience creating beautiful digital solutions for businesses worldwide.</p>
+                    
+                    <div class="mb-8">
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Web Design</span>
+                                <span class="text-yellow-500">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Graphic Design</span>
+                                <span class="text-yellow-500">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">SEO Optimization</span>
+                                <span class="text-yellow-500">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="dark-section py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white">
+                <div>
+                    <h3 class="text-4xl font-bold text-yellow-500 mb-2">8+</h3>
+                    <p class="text-gray-400">Years Experience</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-yellow-500 mb-2">500+</h3>
+                    <p class="text-gray-400">Projects Completed</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-yellow-500 mb-2">3.1</h3>
+                    <p class="text-gray-400">Average Rating</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-yellow-500 mb-2">451+</h3>
+                    <p class="text-gray-400">Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="yellow-accent py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">SERVICE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg">
+                    <div class="text-yellow-500 text-4xl mb-4"><i class="fas fa-globe"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Web Design</h3>
+                    <p class="text-gray-600">Responsive and modern web designs that work perfectly on all devices and provide excellent user experience.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg">
+                    <div class="text-yellow-500 text-4xl mb-4"><i class="fas fa-briefcase"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Business Services</h3>
+                    <p class="text-gray-600">Comprehensive business solutions including branding, strategy, and digital marketing to grow your company.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg">
+                    <div class="text-yellow-500 text-4xl mb-4"><i class="fas fa-cogs"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Business Services</h3>
+                    <p class="text-gray-600">Expert consultation and implementation of cutting-edge technologies for your business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">WHY CHOOSE ME</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="yellow-accent p-8 rounded-lg text-white">
+                    <h3 class="text-2xl font-bold mb-4">Expertise & Experience</h3>
+                    <p>With over 8 years in the industry, I bring proven expertise and innovative solutions to every project.</p>
+                </div>
+                <div class="yellow-accent p-8 rounded-lg text-white">
+                    <h3 class="text-2xl font-bold mb-4">Client Satisfaction</h3>
+                    <p>450+ happy clients worldwide trust me with their digital transformation and business growth.</p>
+                </div>
+                <div class="yellow-accent p-8 rounded-lg text-white">
+                    <h3 class="text-2xl font-bold mb-4">Quality Assurance</h3>
+                    <p>Every project undergoes rigorous testing and quality checks to ensure excellence and reliability.</p>
+                </div>
+                <div class="yellow-accent p-8 rounded-lg text-white">
+                    <h3 class="text-2xl font-bold mb-4">Timely Delivery</h3>
+                    <p>I respect your time and deliver projects on schedule without compromising on quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Work -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">RECENT WORK</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="portfolio-item">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 1" class="w-full h-64 object-cover">
+                </div>
+                <div class="portfolio-item">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 2" class="w-full h-64 object-cover">
+                </div>
+                <div class="portfolio-item">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 3" class="w-full h-64 object-cover">
+                </div>
+                <div class="portfolio-item">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 4" class="w-full h-64 object-cover">
+                </div>
+                <div class="portfolio-item">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 5" class="w-full h-64 object-cover">
+                </div>
+                <div class="portfolio-item">
+                    <img src="/placeholder.svg?height=300&width=300" alt="Project 6" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="yellow-accent py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-white">FREQUENTLY ASKED QUESTIONS</h2>
+            <div class="bg-white rounded-lg overflow-hidden">
+                <div class="faq-item">
+                    <button class="faq-toggle w-full p-6 text-left font-semibold flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(this)">
+                        <span>What is your design process?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6">
+                        <p class="text-gray-600">I follow a comprehensive design process that includes research, wireframing, design, and testing to ensure the best results for your project.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle w-full p-6 text-left font-semibold flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(this)">
+                        <span>How long does a typical project take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6">
+                        <p class="text-gray-600">Project timelines vary based on complexity and scope. Most projects take 2-8 weeks from start to finish.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle w-full p-6 text-left font-semibold flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(this)">
+                        <span>Do you offer revisions?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6">
+                        <p class="text-gray-600">Yes, I include unlimited revisions until you're completely satisfied with the final deliverable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Area -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">BLOG AREA</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg overflow-hidden">
+                    <img src="/placeholder.svg?height=250&width=300" alt="Blog 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2">Design Tips for 2024</h3>
+                        <p class="text-gray-600 text-sm">Discover the latest design trends and tips to keep your brand fresh and modern.</p>
+                        <button class="text-yellow-500 font-semibold mt-4 hover:text-yellow-600">Read More →</button>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg overflow-hidden">
+                    <img src="/placeholder.svg?height=250&width=300" alt="Blog 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2">Web Development Guide</h3>
+                        <p class="text-gray-600 text-sm">Learn the fundamentals of modern web development and best practices.</p>
+                        <button class="text-yellow-500 font-semibold mt-4 hover:text-yellow-600">Read More →</button>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg overflow-hidden">
+                    <img src="/placeholder.svg?height=250&width=300" alt="Blog 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2">SEO Optimization Strategies</h3>
+                        <p class="text-gray-600 text-sm">Master SEO techniques to improve your website's visibility and rankings.</p>
+                        <button class="text-yellow-500 font-semibold mt-4 hover:text-yellow-600">Read More →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="yellow-accent py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-white">TESTIMONIAL</h2>
+            <div class="bg-white p-12 rounded-lg">
+                <div class="flex justify-center mb-6">
+                    <img src="/placeholder.svg?height=80&width=80" alt="Client" class="w-20 h-20 rounded-full">
+                </div>
+                <p class="text-gray-600 mb-6 text-lg">"Al Amin transformed our digital presence completely. His attention to detail and creative solutions exceeded our expectations. Highly recommended!"</p>
+                <h3 class="font-bold text-lg">Sarah Johnson</h3>
+                <p class="text-gray-500">CEO, Tech Innovations Inc.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16">TEAM</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="team-member">
+                    <img src="/placeholder.svg?height=250&width=250" alt="Team Member 1" class="w-full">
+                    <h3 class="font-bold text-lg">Al Amin</h3>
+                    <p class="text-gray-600">Lead Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="/placeholder.svg?height=250&width=250" alt="Team Member 2" class="w-full">
+                    <h3 class="font-bold text-lg">Sarah Smith</h3>
+                    <p class="text-gray-600">Web Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="/placeholder.svg?height=250&width=250" alt="Team Member 3" class="w-full">
+                    <h3 class="font-bold text-lg">Mike Johnson</h3>
+                    <p class="text-gray-600">SEO Specialist</p>
+                </div>
+                <div class="team-member">
+                    <img src="/placeholder.svg?height=250&width=250" alt="Team Member 4" class="w-full">
+                    <h3 class="font-bold text-lg">Emma Davis</h3>
+                    <p class="text-gray-600">Project Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="yellow-accent py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">PRICING AREA</h2>
+            <p class="text-center text-white mb-16">Choose the perfect plan for your needs</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Starter</h3>
+                    <p class="text-4xl font-bold text-yellow-500 mb-6">$299</p>
+                    <ul class="text-gray-600 mb-8 space-y-3">
+                        <li>✓ 5 Pages</li>
+                        <li>✓ Basic SEO</li>
+                        <li>✓ Mobile Responsive</li>
+                        <li>✗ E-commerce</li>
+                    </ul>
+                    <button class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600">Get Started</button>
+                </div>
+                <div class="bg-white p-8 rounded-lg text-center border-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold mb-4">Professional</h3>
+                    <p class="text-4xl font-bold text-yellow-500 mb-6">$599</p>
+                    <ul class="text-gray-600 mb-8 space-y-3">
+                        <li>✓ 15 Pages</li>
+                        <li>✓ Advanced SEO</li>
+                        <li>✓ Mobile Responsive</li>
+                        <li>✓ E-commerce Ready</li>
+                    </ul>
+                    <button class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600">Get Started</button>
+                </div>
+                <div class="bg-white p-8 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+                    <p class="text-4xl font-bold text-yellow-500 mb-6">$999</p>
+                    <ul class="text-gray-600 mb-8 space-y-3">
+                        <li>✓ Unlimited Pages</li>
+                        <li>✓ Full SEO Suite</li>
+                        <li>✓ Mobile Responsive</li>
+                        <li>✓ Full E-commerce</li>
+                    </ul>
+                    <button class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">GET IN TOUCH</h2>
+            <p class="text-center text-gray-600 mb-16">Have a project in mind? Let's discuss how I can help you.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-yellow-500 text-2xl mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4 class="font-bold mb-1">Address</h4>
+                                <p class="text-gray-600">123 Design Street, Creative City, CC 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-yellow-500 text-2xl mr-4 mt-1"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4 class="font-bold mb-1">Phone</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-yellow-500 text-2xl mr-4 mt-1"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p class="text-gray-600">hello@safs.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-yellow-500 text-2xl mr-4 mt-1"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4 class="font-bold mb-1">Business Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p class="text-gray-600">Saturday - Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Full Name</label>
+                            <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email Address</label>
+                            <input type="email" placeholder="your@email.com" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Subject</label>
+                            <input type="text" placeholder="Project Subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea placeholder="Tell me about your project..." rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gray-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+            <p class="text-lg mb-8 opacity-90">Let's work together to bring your vision to life</p>
+            <button class="bg-yellow-500 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition">Contact Me Today</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="dark-section text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-yellow-500 mb-4">Safs</h3>
+                    <p class="text-gray-400">Creating digital solutions that transform businesses.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-yellow-500">Home</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">About</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-yellow-500">Web Design</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">Graphic Design</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">SEO Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-yellow-500 hover:text-yellow-400"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-yellow-500 hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-yellow-500 hover:text-yellow-400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-yellow-500 hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Safs Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('nav');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        window.addEventListener('scroll', () => {
+            // Toggle navbar background on scroll
+            if (window.scrollY > 50) {
+                navbar.classList.remove('transparent');
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.classList.add('transparent');
+            }
+
+            // Update active link based on scroll position
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            faqItem.classList.toggle('active');
+            const icon = button.querySelector('i');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .portfolio-item, .team-member').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add contact form handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const formData = new FormData(this);
+                const name = this.querySelector('input[type="text"]').value;
+                const email = this.querySelector('input[type="email"]').value;
+                const subject = this.querySelectorAll('input[type="text"]')[1].value;
+                const message = this.querySelector('textarea').value;
+                
+                // Show success message
+                alert(`Thank you ${name}! Your message has been sent. I'll get back to you soon at ${email}.`);
+                
+                // Reset form
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
